@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Меню — Погребок</title>
+  <meta name="description" content="Меню кафе Погребок: супы, горячие блюда, гарниры, закуски, салаты, выпечка, десерты и напитки.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Ruslan+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="curtain"><div class="flame"></div></div>
+  <div class="lantern"></div>
+  <canvas id="embers"></canvas>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Погребок — на главную">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 44V22a18 18 0 0 1 36 0v22"/><path d="M12 44V23a12 12 0 0 1 24 0v21"/><path d="M24 14c-2 3-3 5-3 7a3 3 0 0 0 6 0c0-2-1-4-3-7z" fill="currentColor"/><rect x="21" y="25" width="6" height="12" rx="1"/><path d="M17 37h14M2 44h44"/></svg>
+        <span>Погребок</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="menu.html" class="active">Меню</a>
+        <a href="staff.html">Персонал</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <a href="contacts.html#bron" class="btn btn-small btn-header">Забронировать</a>
+      <button class="burger" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="hero page-hero">
+    <div class="hero-bg bg-bar"></div>
+    <div class="hero-inner container">
+      <div class="eyebrow reveal">Книга яств</div>
+      <h1 data-split>Меню</h1>
+      <p class="lead reveal" style="--d:.7s">Всё, что томится в котлах и шипит на углях нашей кухни.</p>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="promo-strip reveal">
+        <span><b>Бизнес-ланч</b> ежедневно 10:00 — 15:00</span>
+        <span><b>Студентам</b> с подпиской на <a href="https://t.me/pogrebok_nsk" target="_blank" rel="noopener">наш Telegram</a>: −50 ₽ на ланч и −10% на основное меню</span>
+      </div>
+
+      <div class="menu-tabs reveal">
+        <button class="menu-tab active" data-target="soups">Супы</button>
+        <button class="menu-tab" data-target="hot">Горячее</button>
+        <button class="menu-tab" data-target="garnish">Гарниры</button>
+        <button class="menu-tab" data-target="cold">Холодные закуски</button>
+        <button class="menu-tab" data-target="salads">Салаты</button>
+        <button class="menu-tab" data-target="bakery">Выпечка</button>
+        <button class="menu-tab" data-target="desserts">Десерты</button>
+        <button class="menu-tab" data-target="drinks">Напитки</button>
+        <button class="menu-tab" data-target="beer">К пиву</button>
+        <button class="menu-tab" data-target="sauces">Соусы и добавки</button>
+        <button class="menu-tab" data-target="frozen">На вынос</button>
+      </div>
+
+      <div class="menu-board frame reveal zoom">
+        <div class="menu-group active" id="soups">
+          <h3>Супы</h3>
+          <p class="group-note">Горячие, наваристые — чтобы согреться с дороги</p>
+          <div class="menu-list">
+            <div class="menu-item"><div class="menu-item-top"><h4>Солянка сборная</h4><span class="dots"></span><span class="price">110 ₽</span></div><p>300 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Борщ</h4><span class="dots"></span><span class="price">100 ₽</span></div><p>300 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Щи с кислой капустой</h4><span class="dots"></span><span class="price">100 ₽</span></div><p>300 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Гороховый с копчёностями</h4><span class="dots"></span><span class="price">110 ₽</span></div><p>300 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Шурпа из баранины</h4><span class="dots"></span><span class="price">200 ₽</span></div><p>400 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Куриный суп с лапшой</h4><span class="dots"></span><span class="price">80 ₽</span></div><p>300 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Окрошка</h4><span class="dots"></span><span class="price">120 ₽</span></div><p>300 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Суп рыбный из кеты</h4><span class="dots"></span><span class="price">90 ₽</span></div><p>300 г</p></div>
+          </div>
+        </div>
+
+        <div class="menu-group" id="hot">
+          <h3>Горячие блюда</h3>
+          <p class="group-note">С плиты, из печи и с чугунной сковороды</p>
+          <div class="menu-list">
+            <div class="menu-item"><div class="menu-item-top"><h4>Манты</h4><span class="dots"></span><span class="price">40 ₽</span></div><p>Из рубленой говядины, лук · 1 шт · 70 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Пельмени</h4><span class="dots"></span><span class="price">160 ₽</span></div><p>Свинина, говядина, лук · 250 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Котлета куриная</h4><span class="dots"></span><span class="price">90 ₽</span></div><p>Курица, лук · 1 шт · 110 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Голубец</h4><span class="dots"></span><span class="price">90 ₽</span></div><p>1 шт · 120 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Перец фаршированный</h4><span class="dots"></span><span class="price">110 ₽</span></div><p>1 шт · 130 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Тефтели</h4><span class="dots"></span><span class="price">120 ₽</span></div><p>Свинина, говядина · 2 шт · 140 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Плов</h4><span class="dots"></span><span class="price">150 ₽</span></div><p>Говядина, рис, морковь, лук, специи · 280 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Поджарка свиная</h4><span class="dots"></span><span class="price">120 ₽</span></div><p>130 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Печень по-строгановски</h4><span class="dots"></span><span class="price">130 ₽</span></div><p>130 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Рулет куриный</h4><span class="dots"></span><span class="price">150 ₽</span></div><p>120 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Бюрек</h4><span class="dots"></span><span class="price">140 ₽</span></div><p>Куриное бедро с сыром, грибами и майонезом · 120 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Эскалоп</h4><span class="dots"></span><span class="price">150 ₽</span></div><p>Свиная отбивная с помидором и сыром · 120 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Антрекот свиной на кости</h4><span class="dots"></span><span class="price">250 ₽</span></div><p>С витаминным салатом · 150 / 30 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Гуляш из говядины</h4><span class="dots"></span><span class="price">130 ₽</span></div><p>130 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Горбуша по-московски</h4><span class="dots"></span><span class="price">250 ₽</span></div><p>Горбуша, сыр, майонез, помидор · 180 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Минтай жареный</h4><span class="dots"></span><span class="price">120 ₽</span></div><p>100 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Зразы</h4><span class="dots"></span><span class="price">130 ₽</span></div><p>Мясная фаршированная котлета, свинина, говядина · 120 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Жаркое в горшочке</h4><span class="dots"></span><span class="price">250 ₽</span></div><p>Свинина, картофель, помидор, сыр, морковь, болгарский перец, стручковая фасоль · 500 г</p></div>
+          </div>
+        </div>
+
+        <div class="menu-group" id="garnish">
+          <h3>Гарниры</h3>
+          <p class="group-note">К любому горячему</p>
+          <div class="menu-list">
+            <div class="menu-item"><div class="menu-item-top"><h4>Гречка</h4><span class="dots"></span><span class="price">50 ₽</span></div><p>150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Рис</h4><span class="dots"></span><span class="price">50 ₽</span></div><p>150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Пюре</h4><span class="dots"></span><span class="price">50 ₽</span></div><p>150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Лапша</h4><span class="dots"></span><span class="price">50 ₽</span></div><p>150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Картофель отварной</h4><span class="dots"></span><span class="price">50 ₽</span></div><p>150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Картофель по-деревенски</h4><span class="dots"></span><span class="price">110 ₽</span></div><p>Со сливочным маслом и чесноком · 150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Капуста тушёная</h4><span class="dots"></span><span class="price">70 ₽</span></div><p>150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Горошница</h4><span class="dots"></span><span class="price">60 ₽</span></div><p>150 г</p></div>
+          </div>
+        </div>
+
+        <div class="menu-group" id="cold">
+          <h3>Холодные закуски</h3>
+          <p class="group-note">К столу и к долгому разговору</p>
+          <div class="menu-list">
+            <div class="menu-item"><div class="menu-item-top"><h4>Мясное ассорти</h4><span class="dots"></span><span class="price">600 ₽</span></div><p>Язык говяжий, сырокопчёная колбаса, куриный рулет, буженина, горчица · 300 / 20 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Рулет куриный с сыром и грецким орехом</h4><span class="dots"></span><span class="price">180 ₽</span></div><p>С горчицей · 120 / 20 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Сельдь с картофелем и луком</h4><span class="dots"></span><span class="price">200 ₽</span></div><p>100 / 100 / 50 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Оливки / маслины</h4><span class="dots"></span><span class="price">100 ₽</span></div><p>50 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Лимон</h4><span class="dots"></span><span class="price">60 ₽</span></div><p>50 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Холодец</h4><span class="dots"></span><span class="price">100 / 150 ₽</span></div><p>Куриный / говяжий · 150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Рыбное ассорти «3 кита»</h4><span class="dots"></span><span class="price">1 100 ₽</span></div><p>Лимон, маслины, оливки · 300 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Сырная тарелка</h4><span class="dots"></span><span class="price">550 ₽</span></div><p>Три вида сыра, виноград, грецкий орех, мёд · 250 / 50 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Сало</h4><span class="dots"></span><span class="price">уточняйте</span></div><p>Три вида</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Овощное ассорти</h4><span class="dots"></span><span class="price">350 ₽</span></div><p>Помидоры, огурцы, редис, болгарский перец, зелень · 350 г</p></div>
+          </div>
+        </div>
+
+        <div class="menu-group" id="salads">
+          <h3>Салаты</h3>
+          <p class="group-note">Свежие и сытные, по домашним рецептам</p>
+          <div class="menu-list">
+            <div class="menu-item"><div class="menu-item-top"><h4>Зимний</h4><span class="dots"></span><span class="price">100 ₽</span></div><p>Колбаса докторская, морковь, картофель, яйца, майонез, свежие огурцы · 150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Сельдь под шубой</h4><span class="dots"></span><span class="price">120 ₽</span></div><p>Сельдь, картофель, лук, морковь, свёкла, майонез · 150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Витаминный</h4><span class="dots"></span><span class="price">80 ₽</span></div><p>Капуста, перец, морковь, огурец, яблочный уксус, подсолнечное масло · 150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Овощной</h4><span class="dots"></span><span class="price">130 ₽</span></div><p>Помидор, огурец, пекинская капуста, перец · 150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Министерский</h4><span class="dots"></span><span class="price">150 ₽</span></div><p>Копчёная колбаса, омлетный блин, пассерованный лук, майонез · 150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Греческий</h4><span class="dots"></span><span class="price">180 ₽</span></div><p>Помидор, перец, огурец, фетакса, оливки, пекинская капуста · 150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Грация</h4><span class="dots"></span><span class="price">130 ₽</span></div><p>Крабовые палочки, кукуруза, яйцо, свежий огурец, яблоко, майонез · 150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Пикантный</h4><span class="dots"></span><span class="price">150 ₽</span></div><p>Кальмар, яйца, пассерованный лук, картофель, солёный огурец · 150 г</p></div>
+          </div>
+        </div>
+
+        <div class="menu-group" id="bakery">
+          <h3>Выпечка</h3>
+          <p class="group-note">Горячее, пока не остыло</p>
+          <div class="menu-list">
+            <div class="menu-item"><div class="menu-item-top"><h4>Хлеб</h4><span class="dots"></span><span class="price">5 ₽</span></div><p>Белый / чёрный · 1 шт</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Блины</h4><span class="dots"></span><span class="price">50 ₽</span></div><p>2 шт</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Самса</h4><span class="dots"></span><span class="price">100 ₽</span></div><p>С курицей · 1 шт</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Горячий бутерброд</h4><span class="dots"></span><span class="price">30 ₽</span></div><p>1 шт</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Беляш</h4><span class="dots"></span><span class="price">80 ₽</span></div><p>1 шт</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Блины фаршированные мясным фаршем</h4><span class="dots"></span><span class="price">60 ₽</span></div><p>1 шт</p></div>
+          </div>
+        </div>
+
+        <div class="menu-group" id="desserts">
+          <h3>Десерты</h3>
+          <p class="group-note">Сладкое к чаю</p>
+          <div class="menu-list">
+            <div class="menu-item"><div class="menu-item-top"><h4>Мороженое с добавками</h4><span class="dots"></span><span class="price">150 ₽</span></div><p>Сироп, грецкий орех, сгущёнка · 120 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Мороженое</h4><span class="dots"></span><span class="price">90 ₽</span></div><p>В ассортименте</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Торт домашний</h4><span class="dots"></span><span class="price">150 ₽</span></div><p>150 г</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Блины фаршированные</h4><span class="dots"></span><span class="price">110 ₽</span></div><p>2 шт</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Фруктовая тарелка</h4><span class="dots"></span><span class="price">400 ₽</span></div><p>Четыре вида фруктов · 350 г</p></div>
+          </div>
+        </div>
+
+        <div class="menu-group" id="drinks">
+          <h3>Напитки</h3>
+          <p class="group-note">Горячие и прохладные</p>
+          <div class="menu-list">
+            <div class="menu-item"><div class="menu-item-top"><h4>Чай</h4><span class="dots"></span><span class="price">35 ₽</span></div><p>Зелёный / чёрный</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Чай заварной</h4><span class="dots"></span><span class="price">200 ₽</span></div><p>Чайник · 800 мл</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Кофе</h4><span class="dots"></span><span class="price">40 ₽</span></div></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Компот</h4><span class="dots"></span><span class="price">30 ₽</span></div><p>Стакан</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Компот</h4><span class="dots"></span><span class="price">150 ₽</span></div><p>Графин · 1 л</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Морс</h4><span class="dots"></span><span class="price">40 ₽</span></div><p>В ассортименте, стакан</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Морс</h4><span class="dots"></span><span class="price">200 ₽</span></div><p>Графин · 1 л</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Вода</h4><span class="dots"></span><span class="price">50 ₽</span></div><p>0,5 л</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Пиво безалкогольное</h4><span class="dots"></span><span class="price">100 ₽</span></div></div>
+          </div>
+        </div>
+
+        <div class="menu-group" id="beer">
+          <h3>Закуски к пиву</h3>
+          <p class="group-note">Хрустящее к кружке</p>
+          <div class="menu-list">
+            <div class="menu-item"><div class="menu-item-top"><h4>Фисташки</h4><span class="dots"></span><span class="price">150 ₽</span></div></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Орешки / чипсы</h4><span class="dots"></span><span class="price">100 ₽</span></div><p>В ассортименте</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Арахис жареный</h4><span class="dots"></span><span class="price">70 ₽</span></div></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Сухарики</h4><span class="dots"></span><span class="price">50 ₽</span></div></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Кольца кальмара</h4><span class="dots"></span><span class="price">200 ₽</span></div></div>
+          </div>
+        </div>
+
+        <div class="menu-group" id="sauces">
+          <h3>Соусы и добавки</h3>
+          <p class="group-note">К блюдам, блинам и мороженому</p>
+          <div class="menu-list">
+            <div class="menu-item"><div class="menu-item-top"><h4>Аджика</h4><span class="dots"></span><span class="price">40 ₽</span></div><p>Соус</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Тар-тар</h4><span class="dots"></span><span class="price">40 ₽</span></div><p>Соус</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Майонез</h4><span class="dots"></span><span class="price">10 ₽</span></div><p>Соус</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Сметана</h4><span class="dots"></span><span class="price">10 ₽</span></div><p>Соус</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Кетчуп</h4><span class="dots"></span><span class="price">10 ₽</span></div><p>Соус</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Соевый соус</h4><span class="dots"></span><span class="price">15 ₽</span></div><p>Соус</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Сгущёнка</h4><span class="dots"></span><span class="price">25 ₽</span></div><p>Добавка</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Варенье домашнее</h4><span class="dots"></span><span class="price">25 ₽</span></div><p>Добавка</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Сироп</h4><span class="dots"></span><span class="price">20 ₽</span></div><p>Добавка</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Шоколад</h4><span class="dots"></span><span class="price">30 ₽</span></div><p>Добавка</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Сливки</h4><span class="dots"></span><span class="price">10 ₽</span></div><p>Добавка</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Орешки</h4><span class="dots"></span><span class="price">30 ₽</span></div><p>Добавка</p></div>
+          </div>
+        </div>
+
+        <div class="menu-group" id="frozen">
+          <h3>Полуфабрикаты и на вынос</h3>
+          <p class="group-note">Домашние манты и пельмени — забирай с собой</p>
+          <div class="menu-list">
+            <div class="menu-item"><div class="menu-item-top"><h4>Манты</h4><span class="dots"></span><span class="price">600 ₽</span></div><p>Замороженные, ручной лепки · 1 кг</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Пельмени</h4><span class="dots"></span><span class="price">500 ₽</span></div><p>Замороженные, ручной лепки · 1 кг</p></div>
+            <div class="menu-item"><div class="menu-item-top"><h4>Контейнер на вынос</h4><span class="dots"></span><span class="price">10 ₽</span></div><p>1 шт</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-wood">
+    <div class="container">
+      <div class="cta frame reveal zoom">
+        <div class="cta-bg"></div>
+        <div class="eyebrow">Проголодался?</div>
+        <h2>Столик у огня ждёт</h2>
+        <p>Бронируй заранее — особенно на вечер пятницы, когда играют барды.</p>
+        <a href="contacts.html#bron" class="btn">Забронировать</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><span>Погребок</span></a>
+          <p style="margin-top:16px">Таверна для тех, кто ценит тёплый свет, сытную еду и неспешные разговоры.</p>
+          <p>📍 Петропавловская ул., 1, цокольный этаж</p>
+          <p>📞 <a href="tel:+79199913883">+7 919 991-38-83</a></p>
+          <div class="socials">
+            <a href="https://wa.me/79199913883" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l1.3-3.9A8.5 8.5 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2z"/></svg>WhatsApp</a>
+            <a href="https://t.me/pogrebok_nsk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/><path d="M9 13l12-9"/></svg>Telegram</a>
+            <a href="https://max.ru/channel_pogrebok54" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>MAX</a>
+          </div>
+        </div>
+        <div>
+          <h4>Разделы</h4>
+          <ul><li><a href="menu.html">Меню</a></li><li><a href="staff.html">Персонал</a></li><li><a href="contacts.html">Контакты и карта</a></li></ul>
+        </div>
+        <div>
+          <h4>Часы работы</h4>
+          <ul><li>Ежедневно: 10:00 — 22:00</li><li>Бизнес-ланч: 10:00 — 15:00</li></ul>
+        </div>
+      </div>
+      <div class="copy">© 2026 Погребок · Новосибирск</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
